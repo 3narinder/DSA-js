@@ -77,14 +77,32 @@
 // console.log(Math.trunc(Math.random() * 9000 + 1000)); //? 1000 < n < 10000
 
 //! Q11: area of rectangle
-let a = 10,
-  b = 12;
+// let a = 10,
+//   b = 12;
 // console.log(a * b);
 
 //! Q12: parameter of rectangle a(a+b)
 // console.log(2 * (a + b));
 
 //!Q13: area of triangle
+
+// let a = 5,
+//   b = 6,
+//   c = 10;
+
+// const s = (a + b + c) / 2;
+
+// const areaOfTriangle = Math.sqrt(s * (s - a) * (s - b) * (s - c)).toFixed(2);
+
+// console.log(areaOfTriangle);
+
+//! Q14: circumference of circle
+// const pi = 3.14;
+// const r = 10;
+
+// const circumOfCircle = (2 * pi * r).toFixed(2);
+
+// console.log(circumOfCircle);
 
 //*=============================================
 //*  ******* LEET CODE QUESTIONS *******
