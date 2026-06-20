@@ -1,6 +1,6 @@
-//? ========================
-//? FUNDAMENTALS
-//? ========================
+//? ==================================
+//? *******  FUNDAMENTALS*******
+//? ==================================
 
 //! Q1: Sum of integers
 // const sum = (a, b) => {
@@ -8,7 +8,7 @@
 // };
 // console.log(sum(10, 12));
 
-//! Q1: Relation between string and number
+//! Q2: Relation between string and number
 // let a = 3; //?number
 // let b = "3"; //?string
 
@@ -16,25 +16,92 @@
 // let a = 10;
 // let b = 20;
 
+//! Q4: Type coercion
+// console.log("1" + 1); //?11 -> if one operant is string, + convert other to string
+// console.log("1" - 1); //? 0, no type coercion on - * /
+
 // console.log("sum of 10 and 20:" + a + b); //? concatenate, because one operant is string
 // console.log("sum of 10 and 20:" + (a + b)); //? Using brackets to prioritize addition;
 
 // console.log(a + b + " " + "is the sum of 10 and 20"); //? we get 30 but as one of the operant is string the whole operation results become string
 // console.log(`sum of 10 and 20: ${a + b}`); //? that's why JS introduced ``
 
-//! Q:
+//! Q5: Swap Two variable
+// let a = 10;
+// let b = 20;
 
-//!===============================================================
-//! Q1: SUM: add two integers, multiple integers, or an array
-//!===============================================================
+//? Method 1: using third variable
+// let c = a; //? c=10, a=10
+// a = b; //? a=20, b=20
+// b = c; //? b=10
 
-//******* 1. Add two integers ******/
+//? Method 2: without using third variable
+// a = a + b; //? a=30
+// b = a - b; //? b=10, 30 - 20 = 10
+// a = a - b; //? a=20, 30 - 10 =20
+
+//? Method 3: array swap
+// [a, b] = [b, a];
+
+// console.log(`a:`, a);
+// console.log(`b:`, b);
+
+//! Q6: unary operator puzzle 1
+// let i = 11;
+// i = i++ + ++i; //? 24
+// i = ++i + ++i; //? 25
+// console.log(i);
+
+//! Q7: unary operator puzzle 2
+// let a = 11,
+//   b = 22;
+
+// let c = a + b + a++ + b++ + ++a + ++b;
+//? 11 + 22 + 11 (11 used then increment to 12) + 22 (22 used then increment to 23) + 13 (12 increment to 13 and used) + 24 (23 increment to 24 then used)
+
+//console.log(a); //? 13
+//console.log(b); //? 24
+//console.log(c); //? 103
+
+//! Q8: unary operator with boolean
+//let b = true;
+//b++; //? type coercion: b become 1 then increment
+//console.log(b); //? 2
+
+//! Q9: using variable before post unary operation
+// let a = 10;
+// console.log(a++); //?10 : a is used before increment
+// console.log(a); //?11
+
+//! Q10: Random 4 digit otp
+// console.log(Math.trunc(Math.random() * 9000 + 1000)); //? 1000 < n < 10000
+
+//! Q11: area of rectangle
+let a = 10,
+  b = 12;
+// console.log(a * b);
+
+//! Q12: parameter of rectangle a(a+b)
+// console.log(2 * (a + b));
+
+//!Q13: area of triangle
+
+//*=============================================
+//*  ******* LEET CODE QUESTIONS *******
+//*=============================================
+
+//!============================
+//! Q1: SUM: add two integers
+//!============================
+
 // const sum = (a, b) => {
 //   return a + b;
 // };
 // console.log(sum(10, 12));
 
-//******* 2. Add N numbers ******/
+//!==============================
+//! Q2 Add N numbers
+//!==============================
 
 //? Method 1
 
@@ -43,7 +110,9 @@
 // };
 // console.log(sum(10, 22, 3, 4, 5, 5, 55));
 
-//******* 3. Sum Array ******/
+//!==============================
+//! Q3 Sum Array
+//!==============================
 
 //?using reduce method
 // const sumArr = (arr) => {
@@ -63,11 +132,9 @@
 // };
 // console.log(sumArr([1, 2, 3, 4]));
 
-//!===============================================================
-//! Q2: Second largest number
-//!===============================================================
-
-//******* 1. Second largest number from a string eg:"dh456839js" ******/
+//!====================================================
+//! Q4: Second largest number from a random string
+//!===================================================
 
 // const secondHighest = (str) => {
 //   let first = -1;
@@ -91,7 +158,9 @@
 
 // console.log(secondHighest("dh456839js"));
 
-//******* 2. Second largest number from an array ******/
+//!============================================
+//! Q5: Second largest number from an array
+//!============================================
 
 // const secondLargestNumber = (arr) => {
 //   let first = -1;
@@ -111,7 +180,7 @@
 // console.log(secondLargestNumber([1, 2, 3, 4, 55, 6, 44]));
 
 //!=======================
-//! Q3: Palindrome Number
+//! Q6: Palindrome Number
 //!=======================
 
 // const isPalindrome = (num) => {
@@ -129,7 +198,7 @@
 // console.log(isPalindrome(121));
 
 //!=======================
-//! Q4: Reverse Integers
+//! Q7: Reverse Integers
 //!=======================
 
 // const reverseInt = (num) => {
@@ -155,9 +224,9 @@
 
 // console.log(reverseInt(-123));
 
-//!=====================================================
-//! Q4: Count negative numbers in an array
-//!=====================================================
+//!==========================================
+//! Q8: Count negative numbers in an array
+//!==========================================
 
 // const countNegative = (arr) => {
 //   if (!Array.isArray(arr)) {
@@ -180,9 +249,9 @@
 
 // console.log(countNegative([1, 2, -3, -4, 5, 6, -7]));
 
-//!=====================================================
-//! Q5: smallest number in array
-//!=====================================================
+//!==============================
+//! Q9: smallest number in array
+//!==============================
 
 // const findSmallest = (arr) => {
 //   if (!Array.isArray(arr)) {
@@ -210,9 +279,9 @@
 
 // console.log(findSmallest([1, 2, 3, 4, 5, 6, 7]));
 
-//!=====================================================
-//! Q5: smallest number in array
-//!=====================================================
+//!===============================
+//! Q10: Largest number in array
+//!===============================
 
 // const findLargest = (arr) => {
 //   if (arr.length === 0) {
@@ -240,16 +309,17 @@
 
 // console.log(findLargest([1, 2, 3, 4, 5, 6, 7]));
 
-//! Q: create an array with a 5 students names, after that create a function which takes 2 parameters (alStudents & studentName) iterate over all students and find that specific user "studentName"
+//!=============================
+//! Q6: Add digits of a number
+//!=============================
 
-//* Algorithm to find specific user form array
-// const students = ["jack", "jill", "marry", "john", "martha"];
-// const findStudent = (allStudents, studentName) => {
-//   for (let i = 0; i < allStudents.length; i++) {
-//     if (allStudents[i] === studentName) {
-//       console.log(`Found ${studentName} at ${i} position`);
-//     }
+// function digitSum(num) {
+//   let sum = 0;
+//   while (num > 0) {
+//     sum += num % 10;
+//     num = Math.floor(num / 10);
 //   }
-// };
+//   return sum;
+// }
 
-// findStudent(students, "john");
+// console.log(digitSum(2345));
